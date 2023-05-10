@@ -29,4 +29,62 @@ delimiter ;
 
 
 
+delimiter //
+create procedure VerUsuarios()
+begin 
+select * from usuario;
+end//
+delimiter ;
+
+
+delimiter //
+create procedure VerUsuariosRecientes()
+begin 
+SELECT * from usuario ORDER BY Nombre_usuario_Usuario asc;
+end//
+delimiter ;
+
+
+delimiter //
+create procedure VerUsuariosAntiguos()
+begin 
+SELECT * from usuario ORDER BY Nombre_usuario_Usuario desc;
+end//
+delimiter ;
+
+
+
+delimiter //
+create procedure VerEstudiantes()
+begin 
+SELECT * from usuario where `Rol_Usuario` = 'Estudiante';
+end//
+delimiter ;
+
+
+
+delimiter //
+create procedure VerMaestros()
+begin 
+SELECT * from usuario where `Rol_Usuario` = 'Maestro';
+end//
+delimiter ;
+
+
+delimiter //
+create procedure VerAdministradores()
+begin 
+SELECT * from usuario where `Rol_Usuario` = 'Administrador';
+end//
+delimiter ;
+
+
+
+
+
+
+
+
+
+
 
