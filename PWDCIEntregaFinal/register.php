@@ -31,7 +31,12 @@ if(isset($_POST["Registrar"])){
         $result=mysqli_query($conn,$sql);
         if(!$result->num_rows > 0){
 
-         $sql="CALL RegistrarUsuario('$Foto_Usuario','$Nombre_Usuario',' $NomPatr_Usuario',' $NomMatr_Usuario','$Rol_Usuario','$Genero_Usuario','$Nacimiento_Usuario','$Correo_Usuario','$Nombre_usuario_Usuario','$Contrasena_Usuario')";
+
+            // INSERT INTO usuario (`Foto_Usuario`,`Nombre_Usuario`, `NomPatr_Usuario`, `NomMatr_Usuario`,`Rol_Usuario`, `Genero_Usuario`, `Nacimiento_Usuario`, `Correo_Usuario`,`Nombre_usuario_Usuario`, `Contrasena_Usuario`)
+            //VALUE ('$Foto_Usuario','$Nombre_Usuario','$NomPatr_Usuario','$NomMatr_Usuario','$Rol_Usuario','$Genero_Usuario','$Nacimiento_Usuario','$Correo_Usuario','$Nombre_usuario_Usuario','$Contrasena_Usuario')
+
+            // CALL RegistrarUsuario('$Foto_Usuario','$Nombre_Usuario',' $NomPatr_Usuario',' $NomMatr_Usuario','$Rol_Usuario','$Genero_Usuario','$Nacimiento_Usuario','$Correo_Usuario','$Nombre_usuario_Usuario','$Contrasena_Usuario')
+            $sql="CALL RegistrarUsuario('$Foto_Usuario','$Nombre_Usuario',' $NomPatr_Usuario',' $NomMatr_Usuario','$Rol_Usuario','$Genero_Usuario','$Nacimiento_Usuario','$Correo_Usuario','$Nombre_usuario_Usuario','$Contrasena_Usuario')";
           
             $result=mysqli_query($conn,$sql);
 

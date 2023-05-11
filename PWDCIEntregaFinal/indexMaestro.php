@@ -10,17 +10,24 @@ if(!isset($_SESSION['Nombre_Usuario'])){
 
 $id = $_SESSION['ID_Usuario'];
 
-$sql ="SELECT Foto_Usuario from usuario where ID_Usuario=$id";
-$mostrarfoto=mysqli_query($conn,$sql);
+
 
 
 $query ="SELECT * from curso";
-    $resultado=$conn->query($query);
+$query=mysqli_query($conn,$query);
 
 
 
     $sql ="SELECT * from categoria";
 $result=mysqli_query($conn,$sql);
+
+
+
+$sqlfoto ="SELECT Foto_Usuario from usuario where ID_Usuario= $id";
+$mostrarfoto=mysqli_query($conn,$sqlfoto);
+
+
+
 
 ?>
 

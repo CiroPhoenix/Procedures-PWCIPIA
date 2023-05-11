@@ -36,7 +36,16 @@ select * from usuario;
 end//
 delimiter ;
 
+delimiter //
+create procedure ModificarCurso(IDCurso INT, NivelesCurso int, CostoCurso decimal, DescripcionCurso varchar(100), CalificacionCurso  INT(2),FotoCurso LONGBLOB,TituloCurso VARCHAR(45),FotoCurso2 LONGBLOB,FotoCurso3 LONGBLOB,CategoriaCurso VARCHAR(255))
+begin 
+UPDATE curso set Niveles_Curso=NivelesCurso, Costo_Curso=CostoCurso, Descripcion_Curso=DescripcionCurso, Calificacion_Curso=CalificacionCurso, Foto_Curso=FotoCurso, Titulo_Curso=TituloCurso, Foto_Curso2=FotoCurso2, Foto_Curso3=FotoCurso3,Categoria_Curso=CategoriaCurso WHERE ID_Curso = IDCurso;
+end//
+delimiter ;
 
+
+
+execute VerUsuarios;
 delimiter //
 create procedure VerUsuariosRecientes()
 begin 
@@ -78,6 +87,19 @@ SELECT * from usuario where `Rol_Usuario` = 'Administrador';
 end//
 delimiter ;
 
+
+delimiter //
+create procedure MostrarFotoDeUsuario(IDSelecionado int)
+begin 
+
+
+SELECT Foto_Usuario from usuario where ID_Usuario= IDSelecionado;
+end//
+delimiter ;
+
+
+
+CALL MostrarFotoDeUsuario('1')
 
 
 
