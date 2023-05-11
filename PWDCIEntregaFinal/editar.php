@@ -28,7 +28,11 @@ if(isset($_POST["Editar"])){
         $result=mysqli_query($conn,$sql);
         if(!$result->num_rows > 0){
 
-            $sql="UPDATE usuario set Foto_Usuario= '$Foto_Usuario',Nombre_Usuario='$Nombre_Usuario', NomPatr_Usuario = '$NomPatr_Usuario', NomMatr_Usuario = '$NomMatr_Usuario',Rol_Usuario='$Rol_Usuario',Rol_Usuario='$Rol_Usuario',Genero_Usuario='$Genero_Usuario',Nacimiento_Usuario='$Nacimiento_Usuario',Correo_Usuario='$Correo_Usuario',Nombre_usuario_Usuario='$Nombre_usuario_Usuario',Contrasena_Usuario='$Contrasena_Usuario' WHERE ID_Usuario=$id";
+
+
+            // CALL EditarUsuario('$Foto_Usuario', '$Nombre_Usuario', '$NomPatr_Usuario', ' $NomMatr_Usuario', ' $Rol_Usuario', '$Genero_Usuario', '$Nacimiento_Usuario', '$Correo_Usuario', ' $Nombre_usuario_Usuario', '$Contrasena_Usuario', '$id');
+            // UPDATE usuario set Foto_Usuario= '$Foto_Usuario',Nombre_Usuario='$Nombre_Usuario', NomPatr_Usuario = '$NomPatr_Usuario', NomMatr_Usuario = '$NomMatr_Usuario',Rol_Usuario='$Rol_Usuario',Rol_Usuario='$Rol_Usuario',Genero_Usuario='$Genero_Usuario',Nacimiento_Usuario='$Nacimiento_Usuario',Correo_Usuario='$Correo_Usuario',Nombre_usuario_Usuario='$Nombre_usuario_Usuario',Contrasena_Usuario='$Contrasena_Usuario' WHERE ID_Usuario=$id
+            $sql=" CALL EditarUsuario('$Foto_Usuario', '$Nombre_Usuario', '$NomPatr_Usuario', ' $NomMatr_Usuario', ' $Rol_Usuario', '$Genero_Usuario', '$Nacimiento_Usuario', '$Correo_Usuario', ' $Nombre_usuario_Usuario', '$Contrasena_Usuario', '$id')";
             $result=mysqli_query($conn,$sql);
 
             if($result){
