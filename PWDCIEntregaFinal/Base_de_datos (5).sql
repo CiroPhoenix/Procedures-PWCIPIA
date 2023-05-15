@@ -201,6 +201,7 @@ CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`clase_archivo` (
     FOREIGN KEY (`Archivo_Clase_Archivo`)
     REFERENCES `proyecto_bdm`.`archivo` (`ID_Archivo`));
   
+  select * from curso;
 CREATE TABLE IF NOT EXISTS `proyecto_bdm`.`imagen` (
 `ID_Imagen` INT NOT NULL AUTO_INCREMENT,
 `Imagen_Imagen` BLOB NOT NULL,

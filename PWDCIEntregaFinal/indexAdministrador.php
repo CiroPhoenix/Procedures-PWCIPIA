@@ -48,7 +48,7 @@ $query ="SELECT * from usuario";
         
       }
   }else{
-      $sql ='CALL VerUsuarios()';
+      $sql ='SELECT * from usuario';
       $resultado=mysqli_query($conn,$sql);
   }
 
